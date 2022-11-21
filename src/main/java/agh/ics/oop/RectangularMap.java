@@ -6,7 +6,7 @@ import java.util.List;
 public class RectangularMap implements IWorldMap{
     private final int width;
     private final int height;
-    private final List<Animal> animals;
+    private final List<Animal> animals; // shadowing?
     private final MapVisualizer visualizer;
 
     public RectangularMap(int width, int height) {
@@ -23,7 +23,7 @@ public class RectangularMap implements IWorldMap{
     }
 
     @Override
-    public boolean place(Animal new_animal){
+    public boolean place(Animal new_animal){    // po co, skoro jest w AbstractWorldMap?
         if(!canMoveTo(new_animal.position())){
             return false;
         }

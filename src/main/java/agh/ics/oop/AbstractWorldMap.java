@@ -5,12 +5,12 @@ import java.util.List;
 
 public abstract class AbstractWorldMap implements IWorldMap {
 
-    List<Animal> animals = new ArrayList<>();
+    protected List<Animal> animals = new ArrayList<>();
 
-    final MapVisualizer visualiser = new MapVisualizer(this);
+    private final MapVisualizer visualiser = new MapVisualizer(this);
 
 
-    public abstract boolean canMoveTo(Vector2d position);
+    public abstract boolean canMoveTo(Vector2d position);   // a tego się nie dało zaimplementować?
 
     @Override
     public boolean place(Animal animal) {
@@ -22,7 +22,7 @@ public abstract class AbstractWorldMap implements IWorldMap {
     }
 
 
-    abstract Object returnObject(Vector2d position);
+    abstract Object returnObject(Vector2d position);    // czym się to różni od objectAt?
 
     @Override
     public boolean isOccupied(Vector2d position) {
@@ -34,7 +34,7 @@ public abstract class AbstractWorldMap implements IWorldMap {
         return returnObject(position);
     }
 
-    abstract Vector2d lowerLeft();
+    abstract Vector2d lowerLeft();  // getLowerLeft - niech nazwa metody się zaczyna czasownikiem
 
     abstract Vector2d upperRight();
 
